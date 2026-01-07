@@ -1,0 +1,145 @@
+{
+    "data": [
+        {
+            "question": "Are these two images of the same species? Answer with 'Yes' or 'No' only.",
+            "answers": [
+                {
+                    "answer": 0
+                }
+            ],
+            "species_1": "Decapoda Oziidae Ozius rugulosus",
+            "species_2": "Decapoda Oziidae Ozius guttatus",
+            "difficulty": 2,
+            "dimension": "Cross-ImageMatching",
+            "question_format": 0,
+            "sources": "BioTroves: https://github.com/baskargroup/BioTrove",
+            "id": 2,
+            "images": [
+                "357137833.jpg",
+                "262730260.jpg"
+            ],
+            "question_raw": "Are these two images of the same species?",
+            "question_choice": null,
+            "question_rule": " Answer with 'Yes' or 'No' only.",
+            "image_width": 500,
+            "image_height": 333
+        }, 
+        {
+            "question": "What is the conservation status of the species shown in the image, according to IUCN Red List in 2020?\n A: Critically Endangered B: Endangered C: Extinct D: Lower Risk/least concern\nPlease answer the question by responsing with the option key (e.g., 'A', 'B', etc.). Please do not include any other text. If there are multiple answer, seperate them by comma, like 'A,B'.\n",
+            "species": "hirsutus",
+            "genus": "Brachionichthys",
+            "dimension": "Threat-StatusDetermination",
+            "question_format": 1,
+            "sources": "BioTroves: https://github.com/baskargroup/BioTrove, IUCN Red List: https://www.iucnredlist.org/",
+            "difficulty": null,
+            "answers": [
+                {
+                    "answer": "Critically Endangered"
+                }
+            ],
+            "id": 35,
+            "images": [
+                "157903967.jpeg"
+            ],
+            "options": {
+                "A": "Critically Endangered",
+                "B": "Endangered",
+                "C": "Extinct",
+                "D": "Lower Risk/least concern"
+            },
+            "question_raw": "What is the conservation status of the species shown in the image, according to IUCN Red List in 2020?",
+            "question_choice": [
+                "A: Critically Endangered",
+                "B: Endangered",
+                "C: Extinct",
+                "D: Lower Risk/least concern"
+            ],
+            "question_rule": "Please answer the question by responsing with the option key (e.g., 'A', 'B', etc.). Please do not include any other text. If there are multiple answer, seperate them by comma, like 'A,B'.",
+            "image_width": 500,
+            "image_height": 312
+        },
+        {
+            "question": "Summarize the information of the species shown at first row, first column. You only need to summarize the information in `ID` only. Please output the text only without additional infomration.",
+            "dimension": "BookUnderstanding",
+            "sources": "Reef Fish Identification Tropical Pacific Page 239",
+            "difficulty": null,
+            "answers": [
+                {
+                    "answer": "Bright red with clearish to reddish fins"
+                },
+                {
+                    "answer": "small scales compared to other soldierfishes"
+                },
+                {
+                    "answer": "no dark margin on rear gill cover or white margins on fins"
+                },
+                {
+                    "answer": "Solitary"
+                },
+                {
+                    "answer": "hide in deep recesses"
+                },
+                {
+                    "answer": "Outer reef slopes in 5-40 m."
+                }
+            ],
+            "id": 0,
+            "question_format": 2,
+            "images": [
+                "reef_fish_identification_page_239.png"
+            ],
+            "question_raw": "Summarize the information of the species shown at first row, first column.",
+            "question_choice": null,
+            "question_rule": "You only need to summarize the information in `ID` only. Please output the text only without additional infomration.",
+            "image_width": 603,
+            "image_height": 970
+        },
+        {
+            "question": "\n\nBased on the descrption below, locate the target object in the image by providing a bounding box. The description is as follows:\n\n```\ntitan triggerfish\n```\n\nPlease provide the bounding boxes of all targets in the format:\n        ```json\n        {\n            \"bboxes\": [\n                [x_topleft, y_topleft, width, height],\n  [x_topleft, y_topleft, width, height]\n              ...\n            ],\n        }\n        ```\n        where `bboxes` is a list of bounding boxes in the format [x_topleft, y_topleft, width, height], which is coco format. You may normalize the value.\n        Please output the answer in JSON format without any additional text.\n",
+            "difficulty": 1,
+            "dimension": "VisualGrounding",
+            "sources": "Orca: https://orca.hkustvgd.com/",
+            "question_format": 3,
+            "answers": [
+                {
+                    "answer": [
+                        6,
+                        158,
+                        544,
+                        293
+                    ]
+                }
+            ],
+            "id": 93,
+            "images": [
+                "localization_Orca_Medium_titan_triggerfish_Titan triggerfish7.JPG"
+            ],
+            "question_raw": "\n\nBased on the descrption below, locate the target object in the image by providing a bounding box. The description is as follows:\n\n```\ntitan triggerfish\n```\n\n",
+            "question_choice": null,
+            "question_rule": "Please  provide the bounding boxes of all targets in the format:\n        ```json\n        {\n            \"bboxes\": [\n                [x_topleft, y_topleft, width, height],\n  [x_topleft, y_topleft, width, height]\n              ...\n            ],\n        }\n        ```\n        where `bboxes` is a list of bounding boxes in the format [x_topleft, y_topleft, width, height], which is coco format. You may normalize the value.\n        ",
+            "image_width": 650,
+            "image_height": 490
+        },
+        {
+            "difficulty": 1,
+            "question_format": 5,
+            "sources": "BioTroves: https://github.com/baskargroup/BioTrove",
+            "dimension": "SpeciesIdentification",
+            "question": "What is the taxnomic genus name of the organism in the image? Please answer with the genus name only without any other text.",
+            "answers": [
+                {
+                    "answer": "Plerogyra"
+                }
+            ],
+            "id": 51,
+            "images": [
+                "432608993.jpg"
+            ],
+            "question_raw": "What is the taxnomic genus name of the organism in the image?",
+            "question_choice": null,
+            "question_rule": " Please answer with the genus name only without any other text.",
+            "image_width": 500,
+            "image_height": 320
+        }
+    ]
+}
