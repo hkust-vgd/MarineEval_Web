@@ -260,6 +260,24 @@ body {
     font-weight: 600;
 }
 
+.content a {
+    color: #1e3a8a; /* marine/royal blue accent */
+    font-weight: 500;
+    text-decoration: none;
+    border-bottom: 1.5px solid rgba(59, 130, 246, 0.4); /* soft underline accent */
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.content a:hover {
+    color: #0f3d73; /* slightly deeper blue on hover */
+    border-bottom-color: rgba(15, 61, 115, 0.9);
+}
+
+.content a:active {
+    color: #0a2e5c; /* slightly darker when clicked */
+    border-bottom-color: rgba(10, 46, 92, 1);
+}
+
 .container {
     max-width: 1000px;
     margin: 3rem auto;
@@ -284,34 +302,199 @@ body {
     display: block;
 }
 
+/* Video figure styling — aligned with .content figure */
+.video-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2.5rem auto;
+    text-align: center;
+    max-width: 800px;
+}
+
+/* Video appearance */
+.video-figure video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    background-color: #000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Subtle hover animation — same feel as image hover */
+.video-figure video:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+}
+
+/* Caption — reuse your existing figcaption style */
+.video-figure figcaption {
+    font-size: 0.95rem;
+    color: #555;
+    font-style: italic;
+    max-width: 700px;
+    line-height: 1.5;
+    margin-top: 0.75rem;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.code-container {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    display: inline-block;
+    width: 100%;
+}
+
+/* Allow hover through the pre/code layers */
+.code-container pre,
+.code-container code {
+    pointer-events: none;
+}
+
+.code-container pre {
+    background-color: #f1f3f5;
+    padding: 1.2rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.code-container code {
+    font-family: "Fira Code", monospace;
+    color: #2c3e50;
+    display: block;
+    white-space: pre;
+}
+
+/* Copy button styles */
+.copy-btn {
+    position: absolute;
+    top: 0.6rem;
+    right: 0.6rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s ease, background-color 0.2s ease;
+    pointer-events: auto; /* Button remains clickable */
+    z-index: 2; /* Stay on top */
+}
+
+.copy-btn:hover {
+    background-color: #0056b3;
+}
+
+.copy-btn.copied {
+    background-color: #28a745;
+}
+
+.code-container:hover .copy-btn {
+    opacity: 1;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #0f3d73; /* suggested professional medium blue */
+    color: #ffffff;
+    padding: 0.6rem 0;
+    font-size: 0.9rem;
+}
+
+/* === NEW / IMPROVED RESPONSIVE DESIGN RULES === */
+
+/* 1️⃣ Tablet breakpoint — adjust layout smoothly around medium screens */
+@media (max-width: 1200px) {
+    .header {
+        max-width: 95%;
+    }
+
+    .authors {
+        font-size: 1.2rem;
+    }
+
+    .link-buttons {
+        gap: 0.8rem;
+    }
+
+    .link-button {
+        padding: 0.6rem 1.3rem;
+    }
+
+    .content {
+        padding: 60px 25px;
+    }
+
+    .content h2 {
+        font-size: 1.8rem;
+    }
+
+    .content p {
+        font-size: 1.05rem;
+    }
+}
+
+/* 2️⃣ Phone breakpoint — stacked header elements, readable typography, full-width buttons */
 @media (max-width: 800px) {
     .paper-header {
-        min-height: 320px; /* instead of fixed 260px */
-        height: auto;
-        padding: 2rem 1rem 3rem; /* add bottom padding so all buttons are visible */
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem 3rem;
+        min-height: 320px;
+    }
+
+    .header {
+        padding: 10px;
     }
 
     .header h1 {
         font-size: 1.4rem;
         line-height: 1.3;
-        word-wrap: break-word; /* prevent overflow */
     }
 
     .authors {
         font-size: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .link-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 0.6rem;
+        width: 100%;
     }
 
     .link-button {
         width: 90%;
+        text-align: center;
     }
+
     .content {
-        padding: 60px 15px;
+        padding: 50px 15px;
     }
 
     .content h2 {
@@ -322,13 +505,94 @@ body {
         font-size: 1rem;
     }
 
-    .content ol,
-    .content ul {
-        margin-left: 1.2rem;
+    .content figure img {
+        border-radius: 8px;
     }
 
-    .content figcaption {
+    .video-figure {
+        margin: 1.8rem auto;
+        width: 100%;
+    }
+
+    .video-wrapper {
+        padding-bottom: 56.25%;
+        border-radius: 8px;
+    }
+
+    .video-wrapper iframe {
+        border-radius: 8px;
+    }
+
+    .content a {
+        border-bottom: 1.5px solid #0f3d73;
+    }
+
+    .link-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem; /* adds padding to the container edges */
+        box-sizing: border-box;
+    }
+
+    .link-button {
+        width: 100%;
+        max-width: 400px; /* optional — keeps buttons from being too wide on large phones */
+        text-align: center;
+    }
+}
+
+/* 3️⃣ Extra small devices — prioritize vertical spacing, hide some minor text decorations */
+@media (max-width: 500px) {
+    .header h1 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .authors {
         font-size: 0.9rem;
+    }
+
+    .affiliations {
+        font-size: 0.9rem;
+    }
+
+    .conference {
+        font-size: 1rem;
+    }
+
+    .link-button {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.1rem;
+    }
+
+    .content h2 {
+        font-size: 1.4rem;
+    }
+
+    .content p {
+        font-size: 0.95rem;
+    }
+
+    .copy-btn {
+        top: 0.4rem;
+        right: 0.4rem;
+        padding: 0.25rem 0.6rem;
+        font-size: 0.7rem;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 0.5rem;
+    }
+
+    .link-buttons {
+        padding: 0 1.2rem; /* slightly more space on very small screens */
+    }
+
+    .link-button {
+        width: 100%;
+        max-width: 350px;
     }
 }
 
