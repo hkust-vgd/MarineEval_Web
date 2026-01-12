@@ -1201,6 +1201,7 @@ canvas {
     margin-bottom: 3rem;
 }
 
+.dataset-btn-container a,
 .dataset-btn {
     display: inline-flex;
     align-items: center;
