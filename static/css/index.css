@@ -20,7 +20,7 @@ body {
     align-items: center;
     text-align: center;
     color: white;
-    padding: 2rem 1rem; /* add some internal padding for breathing space */
+    padding: 2rem 0rem; /* add some internal padding for breathing space */
 }
 
 .paper-header img {
