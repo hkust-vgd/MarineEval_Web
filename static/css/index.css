@@ -143,6 +143,26 @@ body {
     margin: 0;
 }
 
+.oral-presentation {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffb347; /* warm orange that matches the gold tone */
+    letter-spacing: 0.5px;
+    display: inline-block;
+    padding: 0rem 1rem;
+    border-radius: 9999px;
+    /* border: 1px solid rgba(255, 179, 71, 0.3); */
+    /* box-shadow: 0 0 6px rgba(255, 179, 71, 0.25); */
+    transition: all 0.3s ease-in-out;
+}
+
+.oral-presentation:hover {
+    background: rgba(255, 179, 71, 0.28);
+    transform: translateY(-1px);
+    box-shadow: 0 0 10px rgba(255, 179, 71, 0.35);
+}
+
 .content {
     max-width: 900px;
     margin: 0 auto;
@@ -238,7 +258,9 @@ body {
     height: auto;
     border-radius: 10px;
     margin-bottom: 0.75rem;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
     background-color: transparent;
 }
 
@@ -266,7 +288,9 @@ body {
     font-weight: 500;
     text-decoration: none;
     border-bottom: 1.5px solid rgba(59, 130, 246, 0.4); /* soft underline accent */
-    transition: color 0.2s ease, border-color 0.2s ease;
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .content a:hover {
@@ -319,7 +343,9 @@ body {
     border-radius: 10px;
     box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
     background-color: #000;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
 /* Subtle hover animation — same feel as image hover */
@@ -400,7 +426,9 @@ body {
     font-size: 0.8rem;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.2s ease, background-color 0.2s ease;
+    transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
     pointer-events: auto; /* Button remains clickable */
     z-index: 2; /* Stay on top */
 }
@@ -767,7 +795,9 @@ canvas {
     max-width: 280px;
     pointer-events: none;
     opacity: 0;
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
     transform: translate(-50%, -120%) scale(0.98);
     text-align: left; /* overall base alignment */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
@@ -831,7 +861,9 @@ canvas {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    transition: box-shadow 0.25s ease, transform 0.25s ease;
+    transition:
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
     min-width: 900px;
 }
 
@@ -913,7 +945,9 @@ canvas {
     /* width: 100%;
     height: 100%; */
     object-position: center;
-    transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease-in-out,
+        transform 0.3s ease;
     display: block;
     max-width: none;
     width: 100%;
@@ -1040,7 +1074,9 @@ canvas {
 .gallery-image.fade-enter-active {
     opacity: 1;
     transform: scale(1);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
 }
 
 .gallery-btn {
@@ -1277,7 +1313,9 @@ canvas {
     font-size: 0.8rem;
     cursor: pointer;
     opacity: 0;
-    transition: opacity 0.2s ease, background-color 0.2s ease;
+    transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
     pointer-events: auto; /* Button remains clickable */
     z-index: 2; /* Stay on top */
 }
